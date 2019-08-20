@@ -24,10 +24,9 @@ reset_output()
 def display_data(selectedYear):
     yr = selectedYear
     df_yr = df[df['year_of_sale'] == yr]
-    df_yr = df[df['sale_price'] > 50000]
     return df_yr
 
-source = ColumnDataSource(display_data(2017))
+source = ColumnDataSource(data = display_data(2003))
 
 pal= RdYlGn[6]
 
@@ -51,7 +50,6 @@ def update_plot(attr, old, new):
     new_data = display_data(yr)
     source = new_data
     fig.title.text = 'Brooklyn Housing Prices, %d' %yr
-
 
 # Make a slider object: slider
 slider = Slider(title = 'Year',start = 2003, end = 2017, step = 1, value = 2003)
