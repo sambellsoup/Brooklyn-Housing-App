@@ -27,7 +27,7 @@ def display_data(selectedYear):
     df_yr = df_yr[df_yr['sale_price'] >= 100000]
     return df_yr
 
-source = ColumnDataSource(data = display_data(2003))
+source = ColumnDataSource(data = display_data(2017))
 
 pal= RdYlGn[6]
 
@@ -35,7 +35,7 @@ mapper = log_cmap(field_name = "sale_price", palette = pal, low=100000, low_colo
 
 
 tooltips = [("Price","@sale_price"), ("Address","@address"), ("Neighborhood", "@neighborhood")]
-slider = Slider(start=2003, end=2017, step=1, value=2003, title = 'Year')
+slider = Slider(start=2003, end=2017, step=1, value=2017, title = 'Year')
 fig = figure(x_axis_type = 'mercator', y_axis_type = 'mercator', tooltips = tooltips, title = 'Brooklyn Residential Housing Prices, 2003')
 fig.add_tile(CARTODBPOSITRON)
 
@@ -53,7 +53,7 @@ def update_plot(attr, old, new):
     fig.title.text = 'Brooklyn Housing Prices, %d' %yr
 
 # Make a slider object: slider
-slider = Slider(title = 'Year',start = 2003, end = 2017, step = 1, value = 2003)
+slider = Slider(title = 'Year',start = 2003, end = 2017, step = 1, value = 2017)
 slider.on_change('value', update_plot)
 # Make a column layout of widgetbox(slider) and plot, and add it to the current document
 layout = column(fig, widgetbox(slider))
