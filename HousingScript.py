@@ -48,7 +48,7 @@ layout = column(fig, slider)
 def update_plot(attr, old, new):
     yr = slider.value
     new_data = display_data(yr)
-    source.data = new_data
+    source = new_data
     fig.title.text = 'Brooklyn Housing Prices, %d' %yr
 
 # Make a slider object: slider
