@@ -25,7 +25,7 @@ def display_data(selectedYear):
     df_yr = df[df['year_of_sale'] == yr]
     return df_yr
 
-source = ColumnDataSource(display_data(slider.value))
+source = ColumnDataSource(display_data(2003))
 
 pal= RdYlGn[6]
 
