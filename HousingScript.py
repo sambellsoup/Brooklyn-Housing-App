@@ -19,6 +19,7 @@ f = open("mappingdf.pkl", 'rb')
 df = pickle.load(f)
 f.close
 
+reset_output()
 
 def display_data(selectedYear):
     yr = selectedYear
