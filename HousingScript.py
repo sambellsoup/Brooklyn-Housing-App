@@ -27,7 +27,7 @@ def display_data(selectedYear):
     df_yr = df[df['sale_price'] > 50000]
     return df_yr
 
-source = ColumnDataSource(df_yr)
+source = ColumnDataSource(display_data(20017))
 
 pal= RdYlGn[6]
 
