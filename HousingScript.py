@@ -24,7 +24,7 @@ reset_output()
 def display_data(selectedYear):
     yr = selectedYear
     df_yr = df[df['year_of_sale'] == yr]
-    df_yr = df[df['sale_price'] >= 100000]
+    df_yr = df_yr[df_yr['sale_price'] >= 100000]
     return df_yr
 
 source = ColumnDataSource(data = display_data(2003))
