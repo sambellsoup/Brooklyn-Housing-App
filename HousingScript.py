@@ -19,14 +19,13 @@ f = open("mappingdf.pkl", 'rb')
 df = pickle.load(f)
 f.close
 
-reset_output()
 
 def display_data(selectedYear):
     yr = selectedYear
     df_yr = df[df['year_of_sale'] == yr]
     return df_yr
 
-source = ColumnDataSource(display_data(2003))
+#source = ColumnDataSource(display_data(2003))
 
 pal= RdYlGn[6]
 
