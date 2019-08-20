@@ -36,7 +36,7 @@ mapper = log_cmap(field_name = "sale_price", palette = pal, low=100000, low_colo
 
 tooltips = [("Price","@sale_price"), ("Address","@address"), ("Neighborhood", "@neighborhood")]
 slider = Slider(start=2003, end=2017, step=1, value=2017, title = 'Year')
-fig = figure(x_axis_type = 'mercator', y_axis_type = 'mercator', tooltips = tooltips, title = 'Brooklyn Residential Housing Prices, 2003')
+fig = figure(x_axis_type = 'mercator', y_axis_type = 'mercator', tooltips = tooltips, title = 'Brooklyn Residential Housing Prices, 2017')
 fig.add_tile(CARTODBPOSITRON)
 
 fig.circle(x = 'coords_x', y = 'coords_y', line_color = mapper,color=mapper, source=source)
